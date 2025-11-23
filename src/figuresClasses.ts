@@ -16,12 +16,13 @@ export class Triangle implements Figure {
     if (
       sideA + sideB <= sideC ||
       sideA + sideC <= sideB ||
-      sideB + sideC <= sideA ||
-      sideA <= 0 ||
-      sideB <= 0 ||
-      sideC <= 0
+      sideB + sideC <= sideA
     ) {
       throw new Error('Invalid triangle sides');
+    }
+
+    if (sideA <= 0 || sideB <= 0 || sideC <= 0) {
+      throw new Error('Sides must be positive');
     }
   }
 
